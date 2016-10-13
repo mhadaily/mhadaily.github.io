@@ -1,8 +1,9 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Example user template template
-### Example user template
-
-# IntelliJ project files
-.idea
-*.iml
+_site
+.sass-cache
+.jekyll-metadata
 /.idea
+/.sass-cache
+mhadaily.github.io.iml
+Gemfile.lock
+Gemfile
+robots.txt
