@@ -1,9 +1,9 @@
-_site
-.sass-cache
-.jekyll-metadata
-/.idea
-/.sass-cache
+
+.idea/
+.sass-cache/
+_site/
 mhadaily.github.io.iml
 Gemfile.lock
 Gemfile
 robots.txt
+backup.zip
