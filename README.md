@@ -10,4 +10,4 @@ Uncompiled [Jekyll](//jekyllrb.com) source code for [majidhajian.com](//majidhaj
 
 #Note
 
-Remember to install all `gem` dependencies and user `bundler` to update them. if you have any problem please open an issue for me. 
+Remember to install all `gem` dependencies and use `bundler` to update them. if you have any problem please open an issue for me. 
