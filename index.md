@@ -3,8 +3,8 @@ layout: home
 ---
 # About Me
 
-My interest area is UI/UX design and front-end development. What matters to me is the output of my work which is focusing on user point of view and delivering high-quality standards in order to combine technical requirement and business concepts to make perfect products and services.
-
-<h3>New website is under construction</h3>
-
-Thanks to TaylanTatli and Jekyll
+Hello There! I am glad you are in my personal website. I a full-stack developer who is in love with OSS. My main passion is 
+UI/UX and Front-End technologies. However, it's not all, I enjoy developing things with Ruby on Rails, 
+NodeJS(Express, Sails) and MongoDB. Although, I used to work with Laravel, no more PHP, except WordPress! Javascript 
+and HTML/CSS are my daily routine while EmberJS and Angular2 with TypeScript are my material to build applications. Indeed, Scrum is my favorite
+methodology. Recently, I am playing with Go, Ionic, Meteor, Vue.js and would love to learn Elm. 
