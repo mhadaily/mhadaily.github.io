@@ -11,8 +11,8 @@ background:
 
 # Jekyll
 permalink:          /:title/
-#paginate: 5
-#paginate_path:      /blog/page:num/
+paginate: 5
+paginate_path:      /blog/page:num/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
@@ -59,7 +59,7 @@ gems:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
-#  - jekyll-paginate
+  - jekyll-paginate
 
 # Exclude list
 include: [_pages]

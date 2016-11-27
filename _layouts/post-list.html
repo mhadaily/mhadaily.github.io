@@ -16,10 +16,11 @@ layout: compress
     </div>
 
     <div class="block-right">
-      <a href="posts.html" title="posts" class="posts-menu-icon"></a>
-      <a title="projects" class="projects-menu-icon">
-        <span></span>
-      </a>
+      <a href="{{ site.url}}/blog/" title="posts" class="posts-menu-icon"></a>
+      <span class="posts-link">POSTS</span>
+      <!--<a title="projects" class="projects-menu-icon">-->
+        <!--<span></span>-->
+      <!--</a>-->
       <div class="content">
         <ul class="posts-list">
         {% for post in site.posts %}
@@ -43,7 +44,7 @@ layout: compress
         </ul>
       </div>
     </div>
-    {% include overlay.html %}
+    <!--{% include overlay.html %}-->
     {% include scripts.html %}
   </body>
 </html>

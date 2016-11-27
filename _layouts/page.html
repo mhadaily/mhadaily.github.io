@@ -30,9 +30,10 @@ layout: compress
         {% include share.html %}
       </div>
       <a href="{{ site.url }}/blog/" title="posts" class="posts-menu-icon"></a>
-      <a href="{{ site.url }}/projects/" title="projects" class="projects-menu-icon">
-        <span></span>
-      </a>
+      <span class="posts-link">POSTS</span>
+      <!--<a href="{{ site.url }}/projects/" title="projects" class="projects-menu-icon">-->
+        <!--<span></span>-->
+      <!--</a>-->
       <div class="inner-post content">
         <div class="date-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}&#x2756;{% endif %}</div>
         {{ content }}
