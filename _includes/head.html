@@ -1,4 +1,9 @@
 <head>
+  <style>.async-hide { opacity: 0 !important} </style>
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.end=i=function(){
+    s.className=s.className.replace(RegExp(' ?'+y),'')};(a[n]=a[n]||[]).hide=h;
+    setTimeout(function(){i();h.end=null},c);})(window,document.documentElement,
+    'async-hide','dataLayer',2000,{'GTM-NDFC8GK':true,});</script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -61,4 +66,5 @@
     #posts .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ site.url }}/{{ site.background.post-list }}) no-repeat;background-size: cover, cover;}
     .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url({{ site.url }}/{{ site.background.homepage }}) no-repeat;background-size: cover;}
   </style>
+
 </head>
