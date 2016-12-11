@@ -16,14 +16,14 @@ for usual command such as Tar, Zip, Importing to Database or Exporting logs. It 
 the progress of data through a pipeline. It can be inserted into any normal pipeline between two processes to give a visual indication of 
 how quickly data is passing through, how long it has taken, how near to completion it is, and an estimate of how long it will be until completion.
 
-####Some of the benefits of using PV are:
+#### Some of the benefits of using PV are:
 - Total data transferred
 - Time elapsed
 - Current throughput rate
 - Percentage completed
 - ETA
 
-####To Install PV, follow the guides below depends on your OS: 
+#### To Install PV, follow the guides below depends on your OS: 
 
 * **CentOS / RHEL:**	Set up my YUM repository or use RepoForge, then do `yum install pv`.
 * **Fedora:**	Run `yum install pv`; the "extras" repository may be required.
@@ -51,43 +51,59 @@ mysql --user=username --password=password database_name < dump.sql
 
 which in short is equivalent to 
 
-````mysql -u username -p password database_name < dump.sql````
+````
+mysql -u username -p password database_name < dump.sql
+````
 
 Although it seems quite OK, It is not as helpful as it looks when you have a big file. 
 We might have considered better solution as we need to know the status of progress for our 
 record. Therefore, here is the usage of PV while importing our dump. 
 
-````pv your_dump.sql | mysql -u root database_name````
+````
+pv your_dump.sql | mysql -u root database_name
+````
 
 In this case, you are able to see the progress bar just as below:
 
 ![PV Status Bar](/images/dec2016/pv-sample.jpg "Pipe Viewer example")
 
-####More examples to Monitor of PV data progress, sent via a Pipe:
+#### More examples to Monitor of PV data progress, sent via a Pipe:
 
 1- To copy a file called your_access.log to /tmp/something-access.log and show progress:
 
-````pv your_access.log > /tmp/something-access.log````
+````
+pv your_access.log > /tmp/something-access.log
+````
 
 2- To compress a lot of files within a folder and seeing progress bar
 
-````tar cf - /folder-with-big-files -P | pv -s $(du -sb /folder-with-big-files | awk '{print $1}') | gzip > big-files.tar.gz````
+````
+tar cf - /folder-with-big-files -P | pv -s $(du -sb /folder-with-big-files | awk '{print $1}') | gzip > big-files.tar.gz
+````
 
 3- To watch how quickly a file is transferred using nc(1):
 
-````pv file | nc -w 1 somewhere.com 3000````
+````
+pv file | nc -w 1 somewhere.com 3000
+````
 
 4- To transfer a file from another process and passing the expected size to pv:
    
-````cat file | pv -s 12345 | nc -w 1 majidhajian.com 3000````
+````
+cat file | pv -s 12345 | nc -w 1 majidhajian.com 3000
+````
 
 5- To decompress a huge tar.gz file
 
-````pv file.tgz | tar xzf - -C target_directory````
+````
+pv file.tgz | tar xzf - -C target_directory
+````
 
 All in all, Result of all of them like I added a picture to show, is similar as follow:
 
-````1.16MB 0:00:20 [6.06MB/s] [==================>               ] 55%  ETA 0:00:37````
+````
+12.16MB 0:00:20 [6.06MB/s] [==================>               ] 55%  ETA 0:00:37
+````
 
 I encourage you to read more about this amazing tool and be familiar with that. I have plan to 
 publish another article about `screen` which is another great tool and combination of both, will make your
