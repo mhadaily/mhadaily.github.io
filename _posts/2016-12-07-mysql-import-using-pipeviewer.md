@@ -16,14 +16,14 @@ for usual command such as Tar, Zip, Importing to Database or Exporting logs. It 
 the progress of data through a pipeline. It can be inserted into any normal pipeline between two processes to give a visual indication of 
 how quickly data is passing through, how long it has taken, how near to completion it is, and an estimate of how long it will be until completion.
 
-#### Some of the benefits of using PV are:
+### Some of the benefits of using PV are:
 - Total data transferred
 - Time elapsed
 - Current throughput rate
 - Percentage completed
 - ETA
 
-#### To Install PV, follow the guides below depends on your OS: 
+### To Install PV, follow the guides below depends on your OS: 
 
 * **CentOS / RHEL:**	Set up my YUM repository or use RepoForge, then do `yum install pv`.
 * **Fedora:**	Run `yum install pv`; the "extras" repository may be required.
@@ -67,7 +67,7 @@ In this case, you are able to see the progress bar just as below:
 
 ![PV Status Bar](/images/dec2016/pv-sample.jpg "Pipe Viewer example")
 
-#### More examples to Monitor of PV data progress, sent via a Pipe:
+### More examples to Monitor of PV data progress, sent via a Pipe:
 
 1- To copy a file called your_access.log to /tmp/something-access.log and show progress:
 
