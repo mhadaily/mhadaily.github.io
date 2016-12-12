@@ -9,7 +9,7 @@ tag:
 - postgresql
 ---
 
-** Decision made
+## Decision made
 
 While we were developing our *affiliate manager software* in my company, we (development team) decided to migrate raw data from 
 a 3rd party **MySQL**(MariaDB) database which company was using to our **Rails** default db engine which was **PostgresSQL**. 
@@ -47,7 +47,7 @@ Even though, many different ways of conversions are provided by Pgloader, I pick
 However, feel free to check Pgloader website's documentation and do more with less!
  
  
-** Pgloader installation
+## Pgloader installation
 
 Hopefully, Pgloader developed with increasing productivity and performance in mind. So, it is predictable that installing 
 this tools would be as easy as a command. To start with that you can read [Quick Start](http://pgloader.io/howto/quickstart.html) on pgloader.io. 
@@ -63,14 +63,14 @@ Building for the **Windows™ Operating System** is easy enough and the platform
 * **Ubuntu** `apt-get install pgloader`
 * **Docker**: You can also use a docker image for pgloader at https://hub.docker.com/r/dimitri/pgloader/ 
 
-````docker
+````
 $ docker pull dimitri/pgloader
 $ docker run --rm --name pgloader dimitri/pgloader:latest pgloader --version
 $ docker run --rm --name pgloader dimitri/pgloader:latest pgloader --help
 ````
 * **Build From Source** Pgloader is now a Common Lisp program, tested using the SBCL (>= 1.1.14) and Clozure CL implementations with Quicklisp.
 
-````commandline
+````
 apt-get install sbcl unzip libsqlite3-dev make curl gawk freetds-dev libzip-dev
 cd /path/to/pgloader
 make pgloader
@@ -80,7 +80,7 @@ make pgloader
 
 Please feel free to drop me an email if you need more help.
 
-** Better Performance with ColzureCL 
+## Better Performance with ColzureCL 
 
 One of the important problem that I faced, was low memory and killing process by pgloader on our EC2 which has 512MB ram. So, 
 Dimitri in one of the issue on Github Suggest to use CCL instead of SBCL so I also recommend to do it as the performance is significantly
@@ -88,66 +88,64 @@ better and no issue in dropping process because lack of memory.
 
 The preferred way to get Clozure CL is via Subversion. For example, to get Clozure CL 1.11 for Darwin/x86, you'd type (where the $ is the shell prompt):
 
-````git
+````
 svn co http://svn.clozure.com/publicsvn/openmcl/release/1.11/darwinx86/ccl
 ````
 
 Please follow all the steps (here)(http://ccl.clozure.com/download.html) and after making that done remember to make Pgloader with CCL as follow:
 
-````commandline
+````
 make CL=ccl pgloader
 ````
 Now, We are all good to begin.
 
-** Migrating from MySQL
+## Migrating from MySQL
 
 Just create a database where to host the MySQL data and definitions and have pgloader do the migration for you in a single command line:
 
-```commandline
-createdb pagila
+```
+createdb pgdb
 ```  
 
 a single simple command to start, is just as easy as:
 
-````commandline
-pgloader mysql://user@localhost/sakila postgresql:///pagila 
+````
+pgloader mysql://user@localhost/mydb postgresql:///pgdb 
 ````
 
 where you can expand your Postgresql link as such:
 
-````commandline
+````
 postgres://username:password@server:port/databasename
 ````
 
 but it my not be enough. For instance, if you are connection to a remote database such a database on **Heroku** where 
 it consumes SSL as default, you need to add your params to the url to enable ssl, so command would be as below:
 
-````commandline
+````
 postgres://username:password@server:port/databasename?sslmode=require
 ````
 
 So, if you want to load your pg dump to Heroku you can run as simple as:
 
-````commandline
+````
 heroku pg:psql HEROKU_POSTGRESQL_GREEN_URL --app YOUR_APP_NAME_HERE < pgdump
 ````
 
 
-** Common issues
+## Common issues
 
 You may see the following error for first time: `this is incompatible with sql_mode=only_full_group_by`
 but no worries you can easily bypass that. 
 You can try to disable the only_full_group_by setting by executing the following:
 
-````mysql
+````
 mysql> set global sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 ````
 or 
 
-````mysql
+````
 mysql> set session sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 ````
 
 I hope you find this post helpful and feel free to drop an email your feedback which is already appreciated.
-
-
