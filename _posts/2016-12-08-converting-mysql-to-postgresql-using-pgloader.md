@@ -80,7 +80,7 @@ make pgloader
 
 Please feel free to drop me an email if you need more help.
 
-## Better Performance with ColzureCL 
+## Better Performance with ClozureCL 
 
 One of the important problem that I faced, was low memory and killing process by pgloader on our EC2 which has 512MB ram. So, 
 Dimitri in one of the issue on Github Suggest to use CCL instead of SBCL so I also recommend to do it as the performance is significantly
