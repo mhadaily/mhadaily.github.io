@@ -3,12 +3,9 @@ layout: home
 ---
 # About Me
 
-Hello There! I am glad you are in my personal website. I a full-stack developer who is in love with OSS. My main passion is 
-UI/UX and Front-End technologies. However, it's not all, I enjoy developing things with Ruby on Rails, 
-NodeJS(Express, Sails) and MongoDB. 
+Though I am a results-driven front-end developer by day who have converted inactive designs to fully interactive, well-developed, accessible and standards-based user interfaces. I am completely enthusiast with a full stack environment and passionate about JavaScript world. I have even worn the entrepreneurship hat.
+I enjoy traveling, drinking, socializing, reading, helping other people, watching movies, and learning(daily) as much as I intend to work hard.
 
-Although I used to work with Laravel, no more PHP now, indeed, except WordPress! Javascript and HTML/CSS are my daily routine while EmberJS and Angular2 with TypeScript are my material to build applications. 
+Also, I like working in a team, you will learn faster and more. As the saying goes: “two heads are better than one”.
 
-Indeed, Scrum is my favorite methodology under Agile umbrella. I may mention Kanban system which is pretty handy when it comes to smaller project in my prespective.  
-
-Recently, I am playing with Go, Ionic, Meteor, Vue.js and would love to learn Elm.
+I take challenges as inspirations, always looking for improvement, want to be involved in projects that I can be proud of, and join an amazing team and advance my career and friendship.
