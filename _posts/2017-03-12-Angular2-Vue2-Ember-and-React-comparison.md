@@ -54,7 +54,7 @@ I tried to wrap up my research and experiences as a single table which can be re
 | Form handler                  | Simple version in Core as well as addon                                                | @anuglar/form | template base and code base                                                                                                               | Simple version inCore as well as addon                                                             | Simple version in Core as well as addon            |
 
 
- ##Performance
+ ## Performance
  All have been developed with performance in mind and in a different comparison, they are fairly similar with a minor differences which in my 
  opinion, it ready does not matter in the end.
  
