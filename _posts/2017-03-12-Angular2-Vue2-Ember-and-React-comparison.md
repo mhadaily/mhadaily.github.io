@@ -52,7 +52,7 @@ I tried to wrap up my research and experiences as a single table which can be re
 | Filter, Pipe, mixin, helper   | All supported                                                                          | All supported                                                                                                                                             | All supported                                                                                      | All supported                                      |
 | Event Binding                 | yes such as on-submit, also using actions                                              | yes such as ng-click and also using Emitter                                                                                                               | Yes such as v-on and also using Methods                                                            | yes such as onclick and also suing methods         |
 
- ## Performance
+## Performance
  
  All have been developed with performance in mind,however, they are fairly similar with a minor differences which in my 
  opinion, it ready does not matter in the end. The chart below shows that the final results is pretty much similar with little milliseconds discrepancies.
