@@ -11,12 +11,12 @@ tag:
 ---
 
 It is a very good sunday and exciting to me. The reason is that yesterday I spent couple of hours and I built my first Vue.js simple app using 
-Vux and uiElement in order to compare Vue with React, Angular2 and Ember.js. It's live here:  [Live Demo - Vue.js Shop](https://www.majidhajian.com/vue2-shop/)
+Vux and uiElement in order to compare Vue with React, Angular2 and Ember.js. It's live here:  [Live Demo - Vue.js Shop](https://www.majidhajian.com/vue2-shop/){:target="_blank"}
 
 In the battle of front-end frameworks, these days, I feel I am confused that how to answer my question about "which frameworks should I choose?". 
 As a passionate Javascript developer, it is super tough to choose between the following frameworks or library to start a new project. All of them come with pros and cons as well as perfect features that makes you impressed and confused that which one you should use. 
 
-I tried to wrap up my research and experiences as a single table which can be reviewed below:
+I tend to wrap up my research and experiences as a single table which can be reviewed below:
 
 |                               | Ember.js                                                                               | Angular 2                                                                                                                                                 | Vue.js 2                                                                                           | React.js                                           |
 |-------------------------------|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------|
@@ -52,16 +52,17 @@ I tried to wrap up my research and experiences as a single table which can be re
 | Filter, Pipe, mixin, helper   | All supported                                                                          | All supported                                                                                                                                             | All supported                                                                                      | All supported                                      |
 | Event Binding                 | yes such as on-submit, also using actions                                              | yes such as ng-click and also using Emitter                                                                                                               | Yes such as v-on and also using Methods                                                            | yes such as onclick and also suing methods         |
 
+
+
 ## Performance
  
  All have been developed with performance in mind,however, they are fairly similar with a minor differences which in my 
  opinion, it ready does not matter in the end. The chart below shows that the final results is pretty much similar with little milliseconds discrepancies.
  
-![QUick Performance comparison](/images/march2017/performance.jpg "quick performance comparison")
+![QUick Performance comparison](/images/march2017/performance.jpg "quick performance comparison"){:class="img-responsive"}
 
 Benchmarked by: [js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
 Credited to: [stefan krause](http://www.stefankrause.net/wp/?p=392) 
- 
  
 ## Which one to choose?
 
@@ -103,3 +104,5 @@ you definitely should consider Vue.js.
 Like I said, I am a passionate Javascript developer and I love all of them. However, last but not least, my personal choices would be: 1- Angular, 2- Ember, 3- React and 4- Vue. 
 
 My advice is "do not spend to much time to choose between one of the frameworks named above, in fact, find the one that is the most desirable and adaptable among team's developers or you feel comfortable the most."
+
+
