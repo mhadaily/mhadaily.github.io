@@ -56,6 +56,12 @@ I tried to wrap up my research and experiences as a single table which can be re
  All have been developed with performance in mind and in a different comparison, they are fairly similar with a minor differences which in my 
  opinion, it ready does not matter in the end.
  
+![QUick Performance comparison](/images/march2017/performance.jpg "quick performance comparison")
+
+Benchmarked by: https://github.com/krausest/js-framework-benchmark
+Credited to: http://www.stefankrause.net/wp/?p=392 
+ 
+ 
 ## How to choose?
 
 As you see, There are many similarities between them, although they tend to follow their mindset. All of them are awesome 
