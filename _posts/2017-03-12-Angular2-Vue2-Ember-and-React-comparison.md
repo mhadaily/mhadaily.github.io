@@ -14,7 +14,7 @@ It is a very good sunday and exciting to me. The reason is that yesterday I spen
 Vux and uiElement in order to compare Vue with React, Angular2 and Ember.js. It's live here:  [Live Demo - Vue.js Shop](https://www.majidhajian.com/vue2-shop/){:target="_blank"}
 
 In the battle of front-end frameworks, these days, I feel I am confused that how to answer my question about "which frameworks should I choose?". 
-As a passionate Javascript developer, it is super tough to choose between the following frameworks or library to start a new project. All of them come with pros and cons as well as perfect features that makes you impressed and confused that which one you should use. 
+As a passionate Javascript developer, it is super tough to choose between the following frameworks or libraries to start a new project. All of them come with pros and cons as well as perfect features that makes you impressed and as confused as you are not able to stick on one. 
 
 I tend to wrap up my research and experiences as a single table which can be reviewed below:
 
