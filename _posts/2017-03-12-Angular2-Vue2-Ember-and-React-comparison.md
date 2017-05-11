@@ -52,14 +52,12 @@ I tend to wrap up my research and experiences as a single table which can be rev
 | Filter, Pipe, mixin, helper   | All supported                                                                          | All supported                                                                                                                                             | All supported                                                                                      | All supported                                      |
 | Event Binding                 | yes such as on-submit, also using actions                                              | yes such as ng-click and also using Emitter                                                                                                               | Yes such as v-on and also using Methods                                                            | yes such as onclick and also using methods         |
 
-
-
 ## Performance
  
  All have been developed with performance in mind,however, they are fairly similar with a minor differences which in my 
  opinion, it ready does not matter in the end. The chart below shows that the final results is pretty much similar with little milliseconds discrepancies.
  
-![QUick Performance comparison](/images/march2017/performance.jpg "quick performance comparison"){:class="img-responsive"}
+![Quick Performance comparison](/images/march2017/performance.jpg "quick performance comparison"){:class="img-responsive"}
 
 Benchmarked by: [js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
 Credited to: [stefan krause](http://www.stefankrause.net/wp/?p=392) 
@@ -104,5 +102,3 @@ you definitely should consider Vue.js.
 Like I said, I am a passionate Javascript developer and I love all of them. However, last but not least, my personal choices would be: 1- Angular, 2- Ember, 3- React and 4- Vue. 
 
 My advice is "do not spend to much time to choose between one of the frameworks named above, in fact, find the one that is the most desirable and adaptable among team's developers or you feel comfortable the most."
-
-
