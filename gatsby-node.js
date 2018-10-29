@@ -91,7 +91,13 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
 };
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
+  createRedirect({
+                   fromPath: `/ng2-barcode-validator`,
+                   toPath: `/ngx-barcode-validator`,
+                   isPermanent: true,
+                 });
 
   const postTemplate = path.resolve(`src/templates/Post.tsx`);
 

@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-offline',
+    //'gatsby-plugin-offline',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
     'gatsby-plugin-manifest',
