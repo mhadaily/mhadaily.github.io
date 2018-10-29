@@ -12,7 +12,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master",
+    "deploy": "rm -rf .cache && rm -rf public && gatsby build --prefix-paths && gh-pages -d public -b master",
     "fix": "prettier --write 'src/**/*.{ts,tsx,scss,md}' && tslint --fix 'src/**/*.{ts,tsx}' -p tsconfig.json && stylelint --fix 'src/**/*.scss' "
   },
   "devDependencies": {
