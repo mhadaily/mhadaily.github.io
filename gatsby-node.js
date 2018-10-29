@@ -97,6 +97,7 @@ exports.createPages = ({ actions, graphql }) => {
                    fromPath: `/ng2-barcode-validator`,
                    toPath: `/ngx-barcode-validator`,
                    isPermanent: true,
+                   redirectInBrowser: true,
                  });
 
   const postTemplate = path.resolve(`src/templates/Post.tsx`);
