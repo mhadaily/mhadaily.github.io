@@ -1,13 +1,4 @@
-# mhadaily.github.io
+## Majid Hajian Personal Website
 
-Uncompiled [Jekyll](//jekyllrb.com) source code for [majidhajian.com](//majidhajian.com).
+This is based on https://github.com/mhadaily/gatsby-starter-typescript-power-blog
 
-### You are free to use my template
-
-* Clone repo
-* Install Jekyll
-* Run `jekyll serve` in the project directory on the command line
-
-#Note
-
-Remember to install all `gem` dependencies and use `bundler` to update them. if you have any problem please open an issue for me. 
