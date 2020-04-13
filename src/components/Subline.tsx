@@ -1,25 +1,11 @@
 import styled from 'styled-components';
-import rgba from 'polished/lib/color/rgba';
 
 interface Props {
-  theme: {
-    fontSize: {
-      small: number;
-      big: number;
-    };
-    colors: {
-      white: string;
-      grey: {
-        light: string;
-      };
-    };
-  };
-  sectionTitle: string;
-  light: boolean;
+  sectionTitle?: boolean;
 }
 
-export const Subline: any = styled.div`
-  font-size: ${(props: Props) => props.theme.fontSize.small};
-  ${(props: Props) => props.light && `color: ${rgba(props.theme.colors.white, 0.7)}`};
-  ${(props: Props) => props.sectionTitle && 'text-align: center'};
+export const Subline = styled.div<Props>`
+  font-size: ${(props) => props.theme.fontSize.small};
+  color: ${(props) => props.theme.colors.grey.default};
+  ${(props) => props.sectionTitle && 'text-align: center;'}
 `;
