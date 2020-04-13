@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } from '../components';
-import Helmet from 'react-helmet';
+import { Helmet }  from 'react-helmet';
 import config from '../../config/SiteConfig';
 import Data from '../models/Data';
 

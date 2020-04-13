@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Content, Header, Layout, Wrapper } from '../components';
-import Helmet from 'react-helmet';
+import { Helmet }  from 'react-helmet';
 import config from '../../config/SiteConfig';
 import { Link } from 'gatsby';
 

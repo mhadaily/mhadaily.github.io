@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Layout, Wrapper, Button, Article } from '../components';
 import PageProps from '../models/PageProps';
-import Helmet from 'react-helmet';
+import { Helmet }  from 'react-helmet';
 import config from '../../config/SiteConfig';
 import { media } from '../utils/media';
 import rgba from 'polished/lib/color/rgba';
@@ -71,7 +71,7 @@ export default class IndexPage extends React.Component<PageProps> {
                   Hi. I am <br />
                   Majid Hajian
                 </h1>
-                <p>I write about JavaScript, Angular, Ember, React, Vue, GlimmerJs, NodeJs, Rails, Go, Gatsby and ...</p>
+                <p>I write about Dart, Flutter, JavaScript, Angular, React, Vue, NodeJs, Gatsby and ...</p>
                 <Link to="/contact">
                   <Button big={true}>
                     <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
@@ -94,9 +94,11 @@ export default class IndexPage extends React.Component<PageProps> {
               <HomepageContent>
                 <h2>About Me</h2>
                 <p>
-                  Though I am a results-driven front-end developer by day who have converted inactive designs to fully interactive,
-                  well-developed, accessible and standards-based user interfaces. I am completely enthusiast with a full stack environment
-                  and passionate about JavaScript world.
+                  Though I am a results-driven softiware architect and developer
+                  by day who have converted inactive designs to fully interactive,
+                  well-developed, accessible and standards-based user
+                  interfaces. I am completely enthusiast and
+                  passionate about Flutter/Dart and JavaScript world.
                 </p>
                 <hr />
                 <h2>Latest Blog</h2>

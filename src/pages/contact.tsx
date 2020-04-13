@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet }  from 'react-helmet';
 import { Link } from 'gatsby';
 import { Layout, Wrapper, Header, Button, Content, SectionTitle } from '../components';
 

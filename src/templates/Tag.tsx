@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import PageProps from '../models/PageProps';
 import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from '../components';
-import Helmet from 'react-helmet';
+import { Helmet }  from 'react-helmet';
 import config from '../../config/SiteConfig';
 import kebabCase from 'lodash/kebabCase';
 
