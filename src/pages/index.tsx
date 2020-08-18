@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { rgba, darken, lighten } from 'polished';
@@ -48,78 +48,116 @@ const GridRow: any = styled.div`
   }
 `;
 
+const Matrix: any = styled.canvas`
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+`;
+
 const HomepageContent = styled.div<{ center?: boolean }>`
   max-width: 30rem;
   text-align: ${(props) => (props.center ? 'center' : 'left')};
 `;
 
 export default ({ data }: PageProps) => {
-  const { edges, totalCount } = data.allMarkdownRemark;
+  // Get the canvas node and the drawing context
+  const canvas = useRef<HTMLCanvasElement | any>();
+  const col = useRef<HTMLElement>();
+
+  useEffect(() => {
+    const ctx = canvas.current.getContext('2d');
+    // set the width and height of the canvas
+    const w = (canvas.current.width = col.current?.offsetWidth) || 200;
+    const h = (canvas.current.height = col.current?.offsetHeight) || 100;
+    // draw a black rectangle of width and height same as that of the canvas
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, w, h);
+    const cols = Math.floor(w / 20) + 1;
+    const ypos = Array(cols).fill(0);
+    function matrix() {
+      // Draw a semitransparent black rectangle on top of previous drawing
+      ctx.fillStyle = '#0001';
+      ctx.fillRect(0, 0, w, h);
+      // Set color to green and font to 15pt monospace in the drawing context
+      ctx.fillStyle = '#0f0';
+      ctx.font = '10pt monospace';
+      // for each column put a random character at the end
+      ypos.forEach((y, ind) => {
+        // generate a random character
+        const text = String.fromCharCode(Math.random() * 128);
+        // x coordinate of the column, y coordinate is already given
+        const x = ind * 20;
+        // render the character at (x, y)
+        ctx.fillText(text, x, y);
+        // randomly reset the end of the column if it's at least 100px high
+        y > 100 + Math.random() * 10000
+          ? (ypos[ind] = 0)
+          : // otherwise just move the y coordinate for the column 20px down,
+            (ypos[ind] = y + 20);
+      });
+    }
+    const FPS_WANTED = 20;
+    const FPS = 1000 / FPS_WANTED;
+    setInterval(matrix, FPS);
+  }, []);
+
+  const { edges, totalCount } = data.allWordpressWpConferences;
   return (
     <Layout>
       <Wrapper fullWidth={true}>
         <Helmet title={`Homepage | ${config.siteTitle}`} />
         <Homepage>
-          <GridRow background={true}>
+          <GridRow background={false} ref={col}>
+            <Matrix ref={canvas} />
             <HomepageContent center={true}>
               <img src={config.siteLogo} alt={config.siteTitle} />
               <h1>
-                Hi. I am <br />
-                Majid Hajian
+                Hi. I am <br /> Majid Hajian
               </h1>
-              <p>I write about Dart, Flutter, JavaScript, Angular, React, and ...</p>
-              <Link to="/contact">
-                <Button big={true}>
-                  <svg
-                    width="1792"
-                    height="1792"
-                    viewBox="0 0 1792 1792"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M1764 11q33 24 27 64l-256 1536q-5 29-32 45-14 8-31 8-11 0-24-5l-453-185-242 295q-18 23-49 23-13 0-22-4-19-7-30.5-23.5t-11.5-36.5v-349l864-1059-1069 925-395-162q-37-14-40-55-2-40 32-59l1664-960q15-9 32-9 20 0 36 11z" />
-                  </svg>
-                  Contact
-                </Button>
+              <p>I write about Dart, Flutter, PWA, Performance and JavaScript</p>
+              <Link to="/speaking">
+                <Button big={true}>Speaking</Button>
+              </Link>
+              <Link to="/writting">
+                <Button big={true}>Writting</Button>
               </Link>
               <Link to="/blog">
-                <Button big={true}>
-                  <svg
-                    width="1792"
-                    height="1792"
-                    viewBox="0 0 1792 1792"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M1764 11q33 24 27 64l-256 1536q-5 29-32 45-14 8-31 8-11 0-24-5l-453-185-242 295q-18 23-49 23-13 0-22-4-19-7-30.5-23.5t-11.5-36.5v-349l864-1059-1069 925-395-162q-37-14-40-55-2-40 32-59l1664-960q15-9 32-9 20 0 36 11z" />
-                  </svg>
-                  Blog
-                </Button>
+                <Button big={true}>Blog</Button>
               </Link>
+              <GridRow>
+                <Link to="/contact">
+                  <Button big={false}>Contact</Button>
+                </Link>
+              </GridRow>
             </HomepageContent>
           </GridRow>
           <GridRow>
             <HomepageContent>
               <h2>About Me</h2>
               <p>
-                Though I am a results-driven softiware architect and developer by day who have
-                converted inactive designs to fully interactive, well-developed, accessible and
-                standards-based user interfaces. I am completely enthusiast and passionate about
-                Flutter/Dart and JavaScript world.
+                I am a passionate software developer with years of developing and architecting
+                complex web and mobile applications. my passions are Flutter, PWA, and performance.
+                I love sharing my knowledge with the community by writing and speaking, contributing
+                to open source, and organizing meetups and events.
+                <br /> I am the award-winning author of the "Progressive web app with Angular" book
+                by Apress and the "Progressive Web Apps" video course by PacktPub and Udemy. <br />I
+                am also (co)organizer a few Nordic conferences and meetups including GDG Oslo,
+                FlutterVikings, Mobile Era, and ngVikings.
               </p>
               <hr />
-              <h2>Latest Blog</h2>
-              {edges.map((post) => (
-                <Article
-                  title={post.node.frontmatter.title}
-                  date={post.node.frontmatter.date}
-                  excerpt={post.node.excerpt}
-                  timeToRead={post.node.timeToRead}
-                  slug={post.node.fields.slug}
-                  category={post.node.frontmatter.category}
-                  key={post.node.fields.slug}
-                />
+              <h2>Upcoming Talk</h2>
+              {edges.map(({ node }) => (
+                <>
+                  <p>
+                    {node.acf.title} at <b>{node.title}</b>
+                  </p>
+                  <p>
+                    {node.acf.date}, {node.date}
+                  </p>
+                </>
               ))}
               <p className={'textRight'}>
-                <Link to={'/blog'}>All articles ({totalCount})</Link>
+                <Link to={'/speaking'}>All talks ({totalCount})</Link>
               </p>
             </HomepageContent>
           </GridRow>
@@ -128,21 +166,46 @@ export default ({ data }: PageProps) => {
     </Layout>
   );
 };
+
+// export const IndexQuery = graphql`
+//   query {
+//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1) {
+//       totalCount
+//       edges {
+//         node {
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             title
+//             date(formatString: "DD.MM.YYYY")
+//             category
+//           }
+//           timeToRead
+//         }
+//       }
+//     }
+//   }
+// `;
 export const IndexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1) {
+    allWordpressWpConferences(sort: { fields: date, order: DESC }, limit: 1) {
       totalCount
       edges {
         node {
-          fields {
-            slug
-          }
-          frontmatter {
+          date(fromNow: true)
+          title
+          acf {
             title
-            date(formatString: "DD.MM.YYYY")
-            category
+            description
+            type
+            slide
+            website
+            date
+            video
+            online
+            gallery
           }
-          timeToRead
         }
       }
     }

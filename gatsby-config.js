@@ -8,6 +8,33 @@ require('ts-node').register({
 
 const config = require('./config/SiteConfig').default;
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+// Sometimes images in ACF gallert is Boolean and sometimes Number, let's be consistent
+const removeEmptyImages = {
+  name: 'removeEmptyImages',
+  normalizer: function ({ entities }) {
+    return entities.map((e) => {
+      if (e.__type.startsWith('wordpress__wp_conferences')) {
+        return {
+          ...e,
+          acf: {
+            ...e.acf,
+            gallery: [
+              e.acf.gallery.image_1,
+              e.acf.gallery.image_2,
+              e.acf.gallery.image_3,
+              e.acf.gallery.image_4,
+              e.acf.gallery.image_5,
+              e.acf.gallery.image_6,
+              e.acf.gallery.image_7,
+              e.acf.gallery.image_8,
+            ].filter(Number),
+          },
+        };
+      }
+      return e;
+    });
+  },
+};
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -15,6 +42,28 @@ module.exports = {
     siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: 'cms.softiware.com/majidhajian',
+        protocol: 'https',
+        useACF: true,
+        hostingWPCOM: false,
+        verboseOutput: false,
+        perPage: 100,
+        cookies: false,
+        concurrentRequests: 10,
+        includedRoutes: [
+          '**/conferences',
+          '**/books',
+          '**/publications',
+          '**/posts',
+          '**/media',
+          '**/tags',
+        ],
+        normalizers: (normalizers) => [...normalizers, removeEmptyImages],
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
