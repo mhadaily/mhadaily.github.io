@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{JpE5:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n.n(a),i=n("qhky"),c=n("Wbzz"),r=n("7cJT"),u=n("l4Dn");t.default=function(){return l.a.createElement(r.e,null,l.a.createElement(i.a,{title:"Writting | "+u.a.siteTitle}),l.a.createElement(r.d,null,l.a.createElement(c.Link,{to:"/"},u.a.siteTitle),l.a.createElement(r.i,{uppercase:!0},"Writting")),l.a.createElement(r.l,null,l.a.createElement(r.c,null,"Comming soon")))}}}]);
+//# sourceMappingURL=component---src-pages-writting-tsx-b92283df77b6ba7671a2.js.map
