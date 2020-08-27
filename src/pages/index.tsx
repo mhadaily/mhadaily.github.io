@@ -74,9 +74,10 @@ export default ({ data }: PageProps) => {
     ctx.fillRect(0, 0, w, h);
     const cols = Math.floor(w / 20) + 1;
     const ypos = Array(cols).fill(0);
+
     function matrix() {
       // Draw a semitransparent black rectangle on top of previous drawing
-      ctx.fillStyle = '#0001';
+      ctx.fillStyle = rgba(0, 0, 0, 0.066);
       ctx.fillRect(0, 0, w, h);
       // Set color to green and font to 15pt monospace in the drawing context
       ctx.fillStyle = '#0f0';
@@ -147,14 +148,14 @@ export default ({ data }: PageProps) => {
               <hr />
               <h2>Upcoming Talk</h2>
               {edges.map(({ node }) => (
-                <>
+                <div key={node.wordpress_id}>
                   <p>
                     {node.acf.title} at <b>{node.title}</b>
                   </p>
                   <p>
                     {node.acf.date}, {node.date}
                   </p>
-                </>
+                </div>
               ))}
               <p className={'textRight'}>
                 <Link to={'/speaking'}>All talks ({totalCount})</Link>
@@ -193,6 +194,7 @@ export const IndexQuery = graphql`
       totalCount
       edges {
         node {
+          wordpress_id
           date(fromNow: true)
           title
           acf {
