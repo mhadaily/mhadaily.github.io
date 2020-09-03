@@ -119,8 +119,8 @@ export default ({ data }: PageProps) => {
               <Link to="/speaking">
                 <Button big={true}>Speaking</Button>
               </Link>
-              <Link to="/writting">
-                <Button big={true}>Writting</Button>
+              <Link to="/writing">
+                <Button big={true}>Writing</Button>
               </Link>
               <Link to="/blog">
                 <Button big={true}>Blog</Button>
@@ -146,7 +146,7 @@ export default ({ data }: PageProps) => {
                 FlutterVikings, Mobile Era, and ngVikings.
               </p>
               <hr />
-              <h2>Upcoming Talk</h2>
+              <h2>Latest Talk/Workshop</h2>
               {edges.map(({ node }) => (
                 <div key={node.wordpress_id}>
                   <p>
