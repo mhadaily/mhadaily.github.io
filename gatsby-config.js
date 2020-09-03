@@ -66,7 +66,13 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        skipWaiting: true,
+        clientsClaim: true,
+      },
+    },
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
     'gatsby-plugin-manifest',
