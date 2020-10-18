@@ -152,9 +152,7 @@ export default ({ data }: PageProps) => {
                   <p>
                     {node.acf.title} at <b>{node.title}</b>
                   </p>
-                  <p>
-                    {node.acf.date}, {node.date}
-                  </p>
+                  <p>{node.acf.date}</p>
                 </div>
               ))}
               <p className={'textRight'}>
