@@ -136,7 +136,7 @@ export default ({ data }: PageProps) => {
             <HomepageContent>
               <h2>About Me</h2>
               <p>
-                I am a passionate software developer with years of developing and architecting
+                I am a Google Developer Expert and Media Developer Expert and a passionate software developer with years of developing and architecting
                 complex web and mobile applications. my passions are Flutter, PWA, and performance.
                 I love sharing my knowledge with the community by writing and speaking, contributing
                 to open source, and organizing meetups and events.
