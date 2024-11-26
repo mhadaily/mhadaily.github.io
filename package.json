@@ -81,7 +81,7 @@
     "gatsby-plugin-google-tagmanager": "^2.3.11",
     "gatsby-source-wordpress": "^3.3.28",
     "gatsby-source-wordpress-experimental": "^1.3.6",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "polished": "^3.6.5",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",
